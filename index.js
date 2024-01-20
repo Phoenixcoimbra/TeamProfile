@@ -107,14 +107,15 @@ function appMenu() {
                     addEngineer();
                     break;
                 case "Intern":
-                    addIntern
+                    addIntern();
                     break;
                 default:    
                     buildTeam();
             }
-        }
-        )
+        });
     }
+
+} 
 
 // function to add an engineer
 function addEngineer() {
@@ -255,10 +256,12 @@ function buildTeam() {
         fs.mkdirSync(OUTPUT_DIR)
     }
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+   
 }
 
 appMenu();
 
 
 
-}
+
+
