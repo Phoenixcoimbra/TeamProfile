@@ -248,6 +248,14 @@ function addIntern() {
 
 
 }
+// render the html
+function buildTeam() {
+    // check if the output directory exists, and create it if it does not
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+}
 
 appMenu();
 
