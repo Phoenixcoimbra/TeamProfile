@@ -109,7 +109,15 @@ const idArray = [];
     });
 }
 
-
+// render the html
+function buildTeam() {
+    // check if the output directory exists, and create it if it does not
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+   
+}
 
 // function to add an engineer
 function addEngineer() {
@@ -238,21 +246,15 @@ function addIntern() {
         const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
         teamMembers.push(intern);
         idArray.push(answers.internId);
-        createManager();
-        createTeam();
+        
+        buildTeam();
+        
     });
 
 
 }
-// render the html
-function buildTeam() {
-    // check if the output directory exists, and create it if it does not
-    if (!fs.existsSync(OUTPUT_DIR)) {
-        fs.mkdirSync(OUTPUT_DIR)
-    }
-    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
-   
-}
+
+
 createManager();
 
 
