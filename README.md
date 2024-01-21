@@ -14,7 +14,7 @@ Run `node app.js` in your terminal and answer the prompts to generate your team 
 
 ## Demo
 
-(.\assets\14-object-oriented-programming-challenge-demo.png)
+(.\assets\Demonstration.mp4)
 
 ## Contributing
 
